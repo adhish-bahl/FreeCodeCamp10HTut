@@ -14,12 +14,31 @@ import ReactDom from 'react-dom';
 
 
 // ARROW FUNCTIONS AS COMPONENTS
-const ArrowFun = () => {
+// const ArrowFun = () => {
+//     return (
+//             React.createElement("h1", {}, "Hello Friends!")
+//             // React.createElement("div", {}, React.createElement("h6", {}, "This is Adhish Bahl!"));
+//     );
+// }
+// ReactDom.render(<ArrowFun/>, document.getElementById("root"));
+
+
+// Nested Components
+function Final () {
     return (
-            React.createElement("h1", {}, "Hello Friends!")
-            // React.createElement("div", {}, React.createElement("h6", {}, "This is Adhish Bahl!"));
+        <>
+            <DivH1/>
+            <DivH6/>
+        </>
     );
 }
-ReactDom.render(<ArrowFun/>, document.getElementById("root"));
+    
+function DivH1 () {
+    return (
+        <h1>Hello Friends!</h1>
+    );
+}
 
+const DivH6 = () => <h6>This is Adhish Bahl here!</h6>;
 
+ReactDom.render(<Final/>, document.getElementById("root"));
