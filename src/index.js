@@ -124,10 +124,10 @@ function Book(props) {      //Props
 
     return (
         <section className="book">
-            <img src={img} />
-            <h1 style={{ color: 'rgb(132, 132, 172)' }}>{title}</h1>
+            <img src={img} alt="Book" />
+            <h1 style={{ color: 'rgb(132, 132, 172)' }} onClick={() => console.log(title)}>{title}</h1>     {/* JSX CSS */}      {/* onClick Event inside HTML tag */}
             <h4>{author}</h4>
-            <button style={{marginTop:'8px', fontSize:'1.2rem', borderRadius:'8px'}} onClick={btnClick}>Click Here</button>     {/* onCClick Event */}
+            <button style={{marginTop:'8px', fontSize:'1.2rem', borderRadius:'8px'}} onClick={btnClick}>Click Here</button>     {/* onClick Event without Parameter */}
         </section>
     );
 }
