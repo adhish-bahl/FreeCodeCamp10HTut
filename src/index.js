@@ -119,7 +119,7 @@ function Book(props) {      //Props
     return (
         <section className="book">
             <img src={img} />
-            <h1>{title}</h1>
+            <h1 style={{ color: 'rgb(132, 132, 172)' }}>{title}</h1>
             <h4>{author}</h4>
         </section>
     );
