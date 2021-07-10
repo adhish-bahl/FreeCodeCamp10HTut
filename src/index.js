@@ -116,11 +116,18 @@ function Books() {
 function Book(props) {      //Props
     // const {img, title, author} = props.book;
     const { img, title, author } = props;       // Destructuring
+
+    function btnClick(e) {
+        console.log(e);
+        console.log(e.target);
+    }
+
     return (
         <section className="book">
             <img src={img} />
             <h1 style={{ color: 'rgb(132, 132, 172)' }}>{title}</h1>
             <h4>{author}</h4>
+            <button style={{marginTop:'8px', fontSize:'1.2rem', borderRadius:'8px'}} onClick={btnClick}>Click Here</button>     {/* onCClick Event */}
         </section>
     );
 }
