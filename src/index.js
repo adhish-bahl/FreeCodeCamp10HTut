@@ -77,6 +77,8 @@ import ReactDom from "react-dom";
 
 
 // PROPS IN REACT, USED IN AMAZON CLONE
+
+import "./index.css";
 const data = [
     {
         id: 1,
