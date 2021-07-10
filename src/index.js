@@ -77,28 +77,13 @@ import ReactDom from "react-dom";
 
 
 // PROPS IN REACT, USED IN AMAZON CLONE
-
 import "./index.css";
-const data = [
-    {
-        id: 1,
-        img: "https://m.media-amazon.com/images/I/41zoxjP9lcL._AC_UY327_FMwebp_QL65_.jpg",
-        title: "Clean Code",
-        author: "Robert C Martin",
-    },
-    {
-        id: 2,
-        img: "https://m.media-amazon.com/images/I/81RkzIXMFxL._AC_UY327_FMwebp_QL65_.jpg",
-        title: "Grokking Algorithms",
-        author: "Aditya Bhargava ",
-    },
-    {
-        id: 3,
-        img: "https://m.media-amazon.com/images/I/91asIC1fRwL._AC_UY327_FMwebp_QL65_.jpg",
-        title: "Eloquent JavaScript",
-        author: "Marijn Haverbeke ",
-    },
-];
+
+// importing style 1, same name as the component in source file
+import {data} from './data'
+
+// importing style 2, can be different name as the component in source file, more used
+import Book from './book'
 
 function Books() {
     return (
@@ -109,30 +94,6 @@ function Books() {
                     <Book key={data.id} {...data} /> // Seperation Operator        // key for all
                 );
             })}
-        </section>
-    );
-}
-
-function Book(props) {      //Props
-    // const {img, title, author} = props.book;
-    const { img, title, author } = props;       // Destructuring
-
-    function btnClick(e) {
-        console.log(e);
-        console.log(e.target);
-    }
-
-    const paramPassingFun = (author) => {
-        console.log(author);
-    }
-
-    return (
-        <section className="book" onMouseOver = {() => {console.log(title);}}>      {/* onMouseOver Event in HTML tag */}
-            <img src={img} alt="Book" />
-            <h1 style={{ color: 'rgb(132, 132, 172)' }} onClick={() => {console.log(title);}}>{title}</h1>     {/* JSX CSS */}      {/* onClick Event inside HTML tag */}
-            <h4>{author}</h4>
-            <button style={{marginTop:'8px', fontSize:'1.2rem', borderRadius:'8px'}} onClick={btnClick}>Click Here</button>     {/* onClick Event without Parameter */}
-            <button style={{marginTop:'8px', fontSize:'1.2rem', borderRadius:'8px'}} onClick={() => paramPassingFun(author)}>Click Here</button>     {/* onClick Event without Parameter */}        {/* onClick Event without Parameter */}
         </section>
     );
 }
